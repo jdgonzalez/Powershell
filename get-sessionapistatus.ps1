@@ -1,6 +1,8 @@
-for ($i=0; $i -lt 2000; $i++)
+$url = "https://sessionapi.paymetric.com/ping"
+$iternations = 100
+for ($i=0; $i -lt $iternations; $i++)
 {
-    $status = Invoke-WebRequest -Uri "https://sessionapi.paymetric.com/ping" -InformationAction SilentlyContinue
+    $status = Invoke-WebRequest -Uri $url -InformationAction SilentlyContinue 
     if ($status.statusCode -ne "200")
     {
         Write-Host "Error"
